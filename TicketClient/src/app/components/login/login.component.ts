@@ -1,28 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ChangeDetectionStrategy, NgModule } from '@angular/core';
+import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent {
-
-
-
-}
-
+export class LoginComponent {}
 
 @NgModule({
-  declarations: [
-    LoginComponent
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    LoginComponent
-  ]
+  declarations: [LoginComponent],
+  exports: [LoginComponent],
+  imports: [CommonModule],
 })
-export class LoginModule { }
+export class LoginModule {}

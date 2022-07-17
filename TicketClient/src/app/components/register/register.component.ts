@@ -1,16 +1,17 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+@NgModule({
+  declarations: [RegisterComponent],
+  exports: [RegisterComponent],
+  imports: [CommonModule],
+})
+export class RegisterModule {}
