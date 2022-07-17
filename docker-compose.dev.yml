@@ -20,4 +20,6 @@ services:
       - ./TicketClient:/app
       - /app/node_modules
     restart: always
+    expose:
+      - "80"
     
