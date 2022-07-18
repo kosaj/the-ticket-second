@@ -23,7 +23,10 @@ export class OrderComponent {
       mergeMap((params: ParamMap) =>
         this.apiService.getDetailedShow(params.get('eventId') as string)
       ),
-      catchError(() => of(undefined))
+      catchError((error) => {
+        console.error(error);
+        return of(undefined);
+      })
     );
 
   constructor(
