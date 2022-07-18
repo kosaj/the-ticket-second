@@ -16,4 +16,13 @@ services:
       context: ./TicketClient
       target: production-stage
     restart: always
-    
+
+  ticketdb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "49R8MXw#49c6wT9Q8!"
+      MSSQL_PID: "Express"
+    restart: always
+    ports:
+      - "1433:1433"
