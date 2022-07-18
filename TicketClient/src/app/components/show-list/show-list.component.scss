@@ -1,9 +1,10 @@
 :host {
   display: block;
-  margin: 0 auto;
 }
 
 .wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  max-width: var(--page-width);
+  margin: 0 auto;
 }
