@@ -17,7 +17,7 @@ services:
       target: production-stage
     restart: always
 
-  ticketdb:
+  ticketdb: # login SA:49R8MXw#49c6wT9Q8!
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       ACCEPT_EULA: "Y"
@@ -26,3 +26,11 @@ services:
     restart: always
     ports:
       - "1433:1433"
+
+  rabbitmq: # login guest:guest
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
