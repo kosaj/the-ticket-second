@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule, Routes } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Show } from 'src/app/models/show.interface';
 import { ApiService } from 'src/app/services/api.service';
@@ -17,7 +17,8 @@ export class ShowListComponent {
 
   constructor(
     private readonly apiService: ApiService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly route: ActivatedRoute
   ) {}
 
   trackById(index: number, show: Show): string {
@@ -29,11 +30,7 @@ export class ShowListComponent {
       return;
     }
 
-    console.log('kasztanki!');
-
-    this.router
-      .navigate(['/event', { eventId: id }])
-      .catch((x) => console.log(x));
+    this.router.navigate([`/event/${id}`]);
   }
 }
 
