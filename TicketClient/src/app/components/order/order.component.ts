@@ -1,6 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {
+  ActivatedRoute,
+  ParamMap,
+  RouterModule,
+  Routes,
+} from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { catchError, mergeMap } from 'rxjs/operators';
+import { DetailedShow } from 'src/app/models/detailed-show.interface';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-order',
@@ -8,7 +17,20 @@ import { RouterModule, Routes } from '@angular/router';
   styleUrls: ['./order.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class OrderComponent {}
+export class OrderComponent {
+  readonly detailedShow$: Observable<DetailedShow | undefined> =
+    this.route.paramMap.pipe(
+      mergeMap((params: ParamMap) =>
+        this.apiService.getDetailedShow(params.get('eventId') as string)
+      ),
+      catchError(() => of(undefined))
+    );
+
+  constructor(
+    private readonly route: ActivatedRoute,
+    private readonly apiService: ApiService
+  ) {}
+}
 
 const routes: Routes = [
   { path: '', component: OrderComponent, pathMatch: 'full' },

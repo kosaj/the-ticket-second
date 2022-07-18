@@ -12,6 +12,7 @@ export class ApiService {
   }
 
   getDetailedShow(id: string): Observable<DetailedShow> {
+    console.log('IDE: ', id);
     return of(FAKE_SHOWS[0]);
   }
 }
