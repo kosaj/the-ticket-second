@@ -2,9 +2,12 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   Input,
   NgModule,
+  Output,
 } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Show } from 'src/app/models/show.interface';
 
 @Component({
@@ -15,11 +18,12 @@ import { Show } from 'src/app/models/show.interface';
 })
 export class ShowItemComponent {
   @Input() item!: Show;
+  @Output() select: EventEmitter<string> = new EventEmitter<string>();
 }
 
 @NgModule({
   declarations: [ShowItemComponent],
   exports: [ShowItemComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
 })
 export class ShowItemModule {}

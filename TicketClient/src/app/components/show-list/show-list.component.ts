@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Show } from 'src/app/models/show.interface';
 import { ApiService } from 'src/app/services/api.service';
@@ -15,10 +15,21 @@ import { ShowItemModule } from '../show-item/show-item.component';
 export class ShowListComponent {
   readonly shows$: Observable<Array<Show>> = this.apiService.getShows();
 
-  constructor(private readonly apiService: ApiService) {}
+  constructor(
+    private readonly apiService: ApiService,
+    private readonly router: Router
+  ) {}
 
   trackById(index: number, show: Show): string {
     return show.id;
+  }
+
+  routeToElement(id: string): void {
+    if (!id) {
+      return;
+    }
+
+    this.router.navigate(['/heroes', { eventId: id }]);
   }
 }
 
