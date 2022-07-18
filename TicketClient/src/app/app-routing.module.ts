@@ -3,13 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'list',
+    path: 'events',
     loadChildren: () =>
       import('./components/show-list/show-list.component').then(
         (m) => m.ShowListModule
       ),
   },
-  { path: '**', redirectTo: 'list', pathMatch: 'full' },
+  {
+    path: 'event/:eventId',
+    loadChildren: () =>
+      import('./components/order/order.component').then((m) => m.OrderModule),
+  },
+  { path: '**', redirectTo: 'events', pathMatch: 'full' },
 ];
 
 @NgModule({

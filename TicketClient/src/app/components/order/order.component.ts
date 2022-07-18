@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -9,9 +10,13 @@ import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 })
 export class OrderComponent {}
 
+const routes: Routes = [
+  { path: '', component: OrderComponent, pathMatch: 'full' },
+];
+
 @NgModule({
   declarations: [OrderComponent],
   exports: [OrderComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule.forChild(routes)],
 })
 export class OrderModule {}
