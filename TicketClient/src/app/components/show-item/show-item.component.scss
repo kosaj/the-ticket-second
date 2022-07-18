@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.card--description {
+  padding: 1rem;
+
+  p {
+    line-height: 1rem;
+    max-height: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: gray;
+  }
+}
