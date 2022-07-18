@@ -1,1 +1,3 @@
-<p>order works!</p>
+<ng-container *ngIf="detailedShow$ | async as detailedShow">
+  <span>{{ detailedShow }}</span>
+</ng-container>
