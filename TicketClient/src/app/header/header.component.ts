@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -13,6 +14,6 @@ export class HeaderComponent {}
 @NgModule({
   declarations: [HeaderComponent],
   exports: [HeaderComponent],
-  imports: [MatToolbarModule, MatIconModule],
+  imports: [MatToolbarModule, MatIconModule, MatButtonModule],
 })
 export class HeaderModule {}

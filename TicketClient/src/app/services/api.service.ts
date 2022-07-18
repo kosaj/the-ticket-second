@@ -106,6 +106,70 @@ export class ApiService {
       imageSrc:
         'https://ebilet-media.azureedge.net/media/45978/900x507-3450.jpg',
     },
+    {
+      id: '891ddcb9-70db-485b-9983-43facb7248de',
+      name: 'Top of the Top Sopot Festival',
+      price: 115,
+      description: this._description,
+      imageSrc:
+        'https://ebilet-media.azureedge.net/media/47104/top-of-the-top-logo450.jpg',
+    },
+    {
+      id: '676add03-58ad-49f9-85a2-68b9522a7ed8',
+      name: 'Summer Fall Festival',
+      price: 60,
+      description: this._description,
+      imageSrc:
+        'https://ebilet-media.azureedge.net/media/47012/summerfall-900x507450.jpg',
+    },
+    {
+      id: '8d81a453-38f0-4eaf-ae2b-8ae8b554ea01',
+      name: 'VIII Wschód Piękna',
+      price: 120,
+      description: this._description,
+      imageSrc:
+        'https://ebilet-media.azureedge.net/media/46268/900x507-wp22_ebilet-200421450.jpg',
+    },
+    {
+      id: '3ade7f16-fe82-4c48-afed-a73b9f51d7dd',
+      name: 'Great September Showcase Festival & Conference',
+      price: 129,
+      description: this._description,
+      imageSrc:
+        'https://ebilet-media.azureedge.net/media/46653/great-september-900450.jpg',
+    },
+    {
+      id: 'd5a67aab-9c18-47fc-97fc-cd12f3cce1cd',
+      name: 'Lato w Plenerze 2022',
+      price: 70,
+      description: this._description,
+      imageSrc:
+        'https://ebilet-media.azureedge.net/media/46934/lato-w-plenerze-900450.jpg',
+    },
+    {
+      id: '9c108522-a9ca-426e-b39c-6354f50cb2e5',
+      name: 'Festiwal Weselnych Przebojów 2022',
+      price: 119,
+      description: this._description,
+      imageSrc:
+        'https://ebilet-media.azureedge.net/media/46924/22_worldmedia_002_fwp_grafika_900x507px_v1-01-1450.jpg',
+    },
+    {
+      id: '12bd7fc4-05dd-4672-a3a2-08beba7ca64c',
+      name: 'wROCK for Freedom - legendy polskiego rocka',
+      price: 60,
+      description: this._description,
+      imageSrc:
+        'https://ebilet-media.azureedge.net/media/46253/legendy-polskiego-rocka450.jpg',
+    },
+    {
+      id: '8c2729d2-c5ff-44fe-930f-693c332404cb',
+      name: 'MOTO ROCK Festiwal',
+      price: 99,
+      description: this._description,
+      imageSrc:
+        'https://ebilet-media.azureedge.net/media/47103/motorock_900x507450.jpg',
+    },
   ];
 
   getShows(): Observable<Array<Show>> {
