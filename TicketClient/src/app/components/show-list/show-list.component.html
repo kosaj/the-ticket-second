@@ -1,6 +1,4 @@
-<div class="wrapper">
-  <app-show-item
-    [item]="show"
-    *ngFor="let show of shows$ | async; trackBy: trackById"
-  ></app-show-item>
-</div>
+<app-show-item
+  [item]="show"
+  *ngFor="let show of shows$ | async; trackBy: trackById"
+></app-show-item>
