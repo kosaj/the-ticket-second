@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
-import { ActivatedRoute, Router, RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Show } from 'src/app/models/show.interface';
 import { ApiService } from 'src/app/services/api.service';
@@ -17,8 +17,7 @@ export class ShowListComponent {
 
   constructor(
     private readonly apiService: ApiService,
-    private readonly router: Router,
-    private readonly route: ActivatedRoute
+    private readonly router: Router
   ) {}
 
   trackById(index: number, show: Show): string {
