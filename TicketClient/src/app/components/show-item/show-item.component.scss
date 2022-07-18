@@ -27,10 +27,12 @@
   padding: 1rem;
 
   p {
-    line-height: 1rem;
-    max-height: 3rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
+
     color: gray;
+    margin: 0;
   }
 }
