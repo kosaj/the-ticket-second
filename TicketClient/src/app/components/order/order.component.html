@@ -1,3 +1,4 @@
 <ng-container *ngIf="detailedShow$ | async as detailedShow">
-  <span>{{ detailedShow }}</span>
+  <ng-container *ngIf="detailedShow; else error"></ng-container>
 </ng-container>
+<ng-template #error></ng-template>
