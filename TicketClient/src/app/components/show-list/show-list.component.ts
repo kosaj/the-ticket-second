@@ -29,7 +29,11 @@ export class ShowListComponent {
       return;
     }
 
-    this.router.navigate(['/heroes', { eventId: id }]);
+    console.log('kasztanki!');
+
+    this.router
+      .navigate(['/event', { eventId: id }])
+      .catch((x) => console.log(x));
   }
 }
 
