@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  NgModule,
+} from '@angular/core';
+import { Show } from 'src/app/models/show.interface';
 
 @Component({
   selector: 'app-show-item',
@@ -7,7 +13,9 @@ import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
   styleUrls: ['./show-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ShowItemComponent {}
+export class ShowItemComponent {
+  @Input() item!: Show;
+}
 
 @NgModule({
   declarations: [ShowItemComponent],
