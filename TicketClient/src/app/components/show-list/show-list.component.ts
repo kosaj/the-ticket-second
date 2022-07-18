@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Show } from 'src/app/models/show.interface';
+import { ApiService } from 'src/app/services/api.service';
 import { ShowItemModule } from '../show-item/show-item.component';
 
 @Component({
@@ -11,6 +13,10 @@ import { ShowItemModule } from '../show-item/show-item.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShowListComponent {
+  readonly shows$: Observable<Array<Show>> = this.apiService.getShows();
+
+  constructor(private readonly apiService: ApiService) {}
+
   trackById(index: number, show: Show): string {
     return show.id;
   }

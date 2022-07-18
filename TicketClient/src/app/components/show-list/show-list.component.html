@@ -1,4 +1,4 @@
 <app-show-item
   [item]="show"
-  *ngFor="let show of shows$ | async"
+  *ngFor="let show of shows$ | async; trackBy: trackById"
 ></app-show-item>
