@@ -1,7 +1,8 @@
 version: "3.8"
 
 services:
-  testproxy:
+  ticketproxy:
+    container_name: ticket-proxy
     image: nginx:1.21-alpine
     depends_on:
       - "ticketclient"
@@ -37,6 +38,7 @@ services:
       - "rabbitmq"
 
   ticketdb: # login SA:49R8MXw#49c6wT9Q8!
+    container_name: ticket-database
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       ACCEPT_EULA: "Y"
@@ -47,8 +49,8 @@ services:
       - "1433:1433"
 
   rabbitmq: # login guest:guest
+    container_name: ticket-rabbitmq
     image: rabbitmq:3-management
-    hostname: rabbitmq
     restart: always
     ports:
       - "5672:5672"
