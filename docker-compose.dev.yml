@@ -24,6 +24,18 @@ services:
     expose:
       - "80"
 
+  ticketapi:
+    container_name: ticket-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=ticketdb,1433;Initial Catalog=TicketDb;User ID=SA;Password=49R8MXw#49c6wT9Q8!
+    build:
+      context: ./TicketApi
+    restart: always
+    depends_on:
+      - "rabbitmq"
+      - "ticketdb"
+
   ticketsender:
     container_name: ticket-sender
     build:
