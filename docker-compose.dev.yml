@@ -11,7 +11,7 @@ services:
     depends_on:
       - "ticketclient"
 
-  testclient:
+  ticketclient:
     container_name: ticket-client
     build:
       context: ./TicketClient
