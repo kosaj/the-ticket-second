@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "angular.ng-template",
+    "ms-azuretools.vscode-docker",
+    "eamodio.gitlens",
+    "pkief.material-icon-theme",
+    "nrwl.angular-console",
+    "esbenp.prettier-vscode"
+  ]
+}
