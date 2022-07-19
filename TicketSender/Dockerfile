@@ -4,11 +4,11 @@ COPY        package*.json .
 COPY        tsconfig*.json .
 COPY        /tools/wait-for-it.sh .
 COPY        /tools/docker-entrypoint.sh .  
-RUN         npm ci
+RUN         npm ci   
 
 RUN         apk add --no-cache bash
 RUN         chmod +x ./wait-for-it.sh ./docker-entrypoint.sh
-ENTRYPOINT  ["./docker-entrypoint.sh"]
+ENTRYPOINT  ["docker-entrypoint.sh"]
 
 FROM        node:16-alpine as build-stage
 COPY        --from=development-stage --chown=node:node . .
