@@ -6,6 +6,7 @@
     "pkief.material-icon-theme",
     "nrwl.angular-console",
     "esbenp.prettier-vscode",
-    "ms-dotnettools.csharp"
+    "ms-dotnettools.csharp",
+    "jmrog.vscode-nuget-package-manager"
   ]
 }
