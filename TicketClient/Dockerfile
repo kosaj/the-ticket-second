@@ -3,10 +3,12 @@ WORKDIR /app
 
 COPY    package*.json ./
 RUN     npm ci
+COPY        --chown=node:node . .
 
-FROM    node:16-alpine as build-stage
-COPY    --from=development-stage --chown=node:node . .
-RUN     npm run build
+FROM        node:16-alpine as build-stage
+WORKDIR     /app
+COPY        --from=development-stage /app .
+RUN         npm run build
 
 FROM    nginx:1.21-alpine as production-stage
 WORKDIR /usr/share/nginx/html
