@@ -17,6 +17,14 @@ services:
       target: production-stage
     restart: always
 
+  ticketsender:
+    container_name: ticket-sender
+    build:
+      context: ./TicketSender
+    restart: always
+    depends_on:
+      - "rabbitmq"
+
   ticketdb: # login SA:49R8MXw#49c6wT9Q8!
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
