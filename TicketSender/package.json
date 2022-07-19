@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "ts-node-dev --poll src/index.ts",
+    "docker-start": "ts-node-dev --poll src/index.ts",
     "build": "rimraf ./dist && tsc"
   },
   "license": "MIT",

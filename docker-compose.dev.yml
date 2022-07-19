@@ -23,6 +23,19 @@ services:
     expose:
       - "80"
 
+  ticketsender:
+    container_name: ticket-sender
+    build:
+      context: ./TicketSender
+      target: development
+    command: npm run docker-start
+    volumes:
+      - ./TicketSender:/app
+      - /app/node_modules
+    restart: always
+    depends_on:
+      - "rabbitmq"
+
   ticketdb: # login SA:49R8MXw#49c6wT9Q8!
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
