@@ -16,12 +16,12 @@ services:
     build:
       context: ./TicketClient
       target: development-stage
-    command: npm run docker-start
     volumes:
       - ./TicketClient:/app
       - /app/node_modules
     expose:
       - "80"
+    command: npm run docker-start
     restart: always
     depends_on:
       - "ticketapi"
