@@ -21,6 +21,9 @@ services:
     container_name: ticket-sender
     build:
       context: ./TicketSender
+    environment:
+      - CHECK_HOST=rabbitmq
+      - CHECK_PORT=5672
     restart: always
     depends_on:
       - "rabbitmq"
