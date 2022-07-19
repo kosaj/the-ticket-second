@@ -2,8 +2,8 @@ FROM        node:16-alpine as development-stage
 WORKDIR     /app
 COPY        package*.json .
 COPY        tsconfig*.json .
-COPY        ../TicketTools/wait-for-it.sh .
-COPY        ../TicketTools/docker-entrypoint.sh .  
+COPY        ./tools/wait-for-it.sh .
+COPY        ./tools/docker-entrypoint.sh .  
 RUN         npm ci   
 
 RUN         apk add --no-cache bash
